@@ -10,5 +10,7 @@
 #define reading_hpp
 
 #include <stdio.h>
+#include <iostream>
+using namespace std;
 
 #endif /* reading_hpp */
