@@ -10,8 +10,10 @@
 #define counting_hpp
 
 #include <stdio.h>
-
+#include <vector>
 #endif /* counting_hpp */
 using namespace std;
 
 int stringLength(string);
+void getMatrix(vector<string>, int);
+string nameOfTeam(string, int);
