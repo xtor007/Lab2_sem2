@@ -14,10 +14,23 @@
 #include "output.hpp"
 using namespace std;
 
+int stringLength(string s){
+    int size = 0;
+    while (s[size]){
+        size++;
+    }
+    return size;
+}
+
 int main(int argc, const char * argv[]) {
     int n = 0;
     vector<string> mtx;
     mtx = readFiles(&n);
+    
+    for (int i = 0; i<n; i++){
+        cout<<mtx[i]<<"     "<<stringLength(mtx[i])<<endl;
+    }
+    cout<<endl<<endl;
     
     return 0;
 }
