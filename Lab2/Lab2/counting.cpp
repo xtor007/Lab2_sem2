@@ -29,6 +29,14 @@ int scoreComparising(int scoredGoals, int canceledGoals){
     else return (scoredGoals<canceledGoals)? 0 : 1;
 }
 
+
+
+
+
+
+
+
+
 void getMatrix(vector<string> line, int numberOfLines){
     string teams[numberOfLines];
     bool flag = 1;
@@ -62,7 +70,20 @@ void getMatrix(vector<string> line, int numberOfLines){
         int cancels = 0;
         int resultedScore = 0;
         for (int j = col; j < stringLength(line[i]); j++){
-
+            if (line[i][j-1] ==',' && line[i][j+1] == ':'){
+                goals = int(line[i][j] - 48);
+                //cout<<goals<<":";
+            }
+            if (line[i][j-1] ==':' && (line[i][j+1] == ',' || j+1==stringLength(line[i]))){
+                cancels = int(line[i][j] - 48);
+                resultedScore = resultedScore+scoreComparising(goals, cancels);
+                cout<<i<<"-team "<<resultedScore<<endl;
+                //cout<<cancels<<":";
+            }
+        }
+        cout<<"\n";
+        row++;
+        col=0;
     }
 
     for (int i = 0; i < numberOfLines; i++){
@@ -74,4 +95,4 @@ void getMatrix(vector<string> line, int numberOfLines){
     }
    
 }
-}
+
