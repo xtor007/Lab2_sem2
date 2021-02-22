@@ -9,9 +9,10 @@
 #include "reading.hpp"
 
 vector<string> readFiles(int *kolTeams) {
-    kolTeams = 0;
+    *kolTeams = 0;
+    int nn = *kolTeams;
     string teka;
-    cin >> teka;
+    getline(cin,teka);
     teka += "premier_league";
     vector<string> resultRead;
     int countFiles = 1;
@@ -21,12 +22,17 @@ vector<string> readFiles(int *kolTeams) {
     ifstream inFile;
     inFile.open(nowFile);
     while (inFile.is_open()) {
-        getline(inFile,s,'\0');
+        getline(inFile,s,'\n');
         countTeamInFile = stoi(s);
-        for (kolTeams; kolTeams<kolTeams+countTeamInFile; kolTeams++) {
-            getline(inFile,s,'\0');
+        for (nn = *kolTeams; nn<*kolTeams+countTeamInFile; nn++) {
+            getline(inFile,s,'\n');
             resultRead.push_back(s);
         }
+        *kolTeams = nn;
+        countFiles++;
+        nowFile = teka + to_string(countFiles) + ".csv";
+        inFile.close();
+        inFile.open(nowFile);
     }
 //    /Users/khramchenko/Documents/Lab2_sem2/files/premier_league2.csv
     return resultRead;

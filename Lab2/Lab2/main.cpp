@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "reading.hpp"
 #include "counting.hpp"
 #include "sorting.hpp"
@@ -14,6 +15,9 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    int n = 0;
+    vector<string> mtx;
+    mtx = readFiles(&n);
     
     return 0;
 }
