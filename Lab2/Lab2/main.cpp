@@ -18,12 +18,17 @@ int main(int argc, const char * argv[]) {
     int n = 0;
     vector<string> mtx;
     mtx = readFiles(&n);
-    getMatrix(mtx, n);
+    string s[20];
+    int score[20];
+    getMatrix(mtx, n, s, score);
     /*
     for (int i = 0; i<n; i++){
         cout<<mtx[i]<<"     "<< stringLength(mtx[i])<<endl;
     }
     cout<<endl<<endl;
     */
+    for (int i = 0; i<20; i++){
+        cout<<s[i]<<" "<<score[i]<<endl;
+    }
     return 0;
 }

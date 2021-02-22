@@ -37,18 +37,7 @@ int scoreComparising(int scoredGoals, int canceledGoals){
 
 
 
-void getMatrix(vector<string> line, int numberOfLines){
-    string teams[numberOfLines];
-    bool flag = 1;
-    // initialization of matrix for each team's score
-    // number of rows obviously will be equal to a number of teams(defolt: 20)
-    // number of columns will be equal to 2, cause for each command we have 2 values: number of canceled goals and number of scored goals
-    
-    int **matrixScore = new int *[numberOfLines];
-    for (int i = 0; i < numberOfLines; i++){
-        matrixScore[i] = new int[2];
-    }
-    
+void getMatrix(vector<string> line, int numberOfLines, string *teams, int *ScoreArray){
     for (int i = 0; i < numberOfLines; i++){
         for (int j = 0; j < stringLength(line[i]); j++){
             cout<<line[i][j];
@@ -82,6 +71,7 @@ void getMatrix(vector<string> line, int numberOfLines){
             }
         }
         cout<<"\n";
+        ScoreArray[i] = resultedScore;
         row++;
         col=0;
     }
@@ -91,7 +81,7 @@ void getMatrix(vector<string> line, int numberOfLines){
     }
     
     for (int i=0; i<numberOfLines; i++){
-        cout<<teams[i]<<endl;
+        cout<<teams[i]<<" "<<ScoreArray[i]<<endl;
     }
    
 }

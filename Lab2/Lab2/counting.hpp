@@ -15,5 +15,5 @@
 using namespace std;
 
 int stringLength(string);
-void getMatrix(vector<string>, int);
+void getMatrix(vector<string>, int, string*, int*);
 string nameOfTeam(string, int);
