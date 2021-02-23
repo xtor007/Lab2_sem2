@@ -20,7 +20,7 @@ void replacementString (string *arr, int a, int b) {
     arr[b] = c;
 }
 
-void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOfTeams) {
+void sort(int *points, int *diffGoals, int *pGoals, int *pCanc, string *pNames, int numberOfTeams) {
     int pivot = numberOfTeams - 1;
     int wall = 0;
     int currentValue = 0;
@@ -32,6 +32,7 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
                 replacementInt(points, currentValue, wall);
                 replacementInt(diffGoals, currentValue, wall);
                 replacementInt(pGoals, currentValue, wall);
+                replacementInt(pCanc, currentValue, wall);
                 replacementString(pNames, currentValue, wall);
                 wall++;
             }
@@ -39,6 +40,7 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
                 replacementInt(points, currentValue, wall);
                 replacementInt(diffGoals, currentValue, wall);
                 replacementInt(pGoals, currentValue, wall);
+                replacementInt(pCanc, currentValue, wall);
                 replacementString(pNames, currentValue, wall);
                 wall++;
             }
@@ -46,6 +48,7 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
                 replacementInt(points, currentValue, wall);
                 replacementInt(diffGoals, currentValue, wall);
                 replacementInt(pGoals, currentValue, wall);
+                replacementInt(pCanc, currentValue, wall);
                 replacementString(pNames, currentValue, wall);
                 wall++;
             }
