@@ -8,6 +8,18 @@
 
 #include "sorting.hpp"
 
+void replacementInt (int *arr, int a, int b) {
+    int c = arr[a];
+    arr[a] = arr[b];
+    arr[b] = c;
+}
+
+void replacementString (string *arr, int a, int b) {
+    string c = arr[a];
+    arr[a] = arr[b];
+    arr[b] = c;
+}
+
 void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOfTeams) {
     int pivot = numberOfTeams - 1;
     int wall = 0;
