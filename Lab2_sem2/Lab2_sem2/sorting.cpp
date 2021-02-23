@@ -13,7 +13,13 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
     int wall = 0;
     int currentValue = 0;
     while (pivot >= 1) {
-        
+        wall = 0;
+        currentValue = 0;
+        while (currentValue < pivot) {
+            if (points[currentValue]>points[pivot]) {
+                
+            }
+        }
         pivot--;
     }
 }
