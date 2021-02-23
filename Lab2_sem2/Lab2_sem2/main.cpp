@@ -23,8 +23,6 @@ int main(int argc, const char * argv[]) {
     int difference[n];
     int goals[n];
     int array[n];
-    for(int i = 0; i<n; i++){
-        array[i] = getScore(mtx, n, teams, goals, difference, cancels)[i];
-    }
+    getScore(mtx, n, teams, goals, difference, cancels, array);
     return 0;
 }

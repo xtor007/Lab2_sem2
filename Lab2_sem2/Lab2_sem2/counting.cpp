@@ -20,9 +20,8 @@ int scoreComparising(int scoredGoals, int canceledGoals){
     else return (scoredGoals<canceledGoals)? 0 : 1;
 }
 
-int* getScore(vector<string> line, int numberOfLines, string *teams, int *GoalsArray, int *differenceArray, int *CancelsArray){
+void getScore(vector<string> line, int numberOfLines, string *teams, int *GoalsArray, int *differenceArray, int *CancelsArray, int *ResultedScoreArray){
     
-    int ResultedScoreArray[numberOfLines];
     int row = 0;
     int col = 0;
     int goals = 0;
@@ -52,6 +51,5 @@ int* getScore(vector<string> line, int numberOfLines, string *teams, int *GoalsA
         row++;
         col=0;
     }
-    return ResultedScoreArray;
 }
 

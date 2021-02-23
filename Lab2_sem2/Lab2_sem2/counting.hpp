@@ -14,4 +14,4 @@
 #endif /* counting_hpp */
 using namespace std;
 
-int* getScore(vector<string>, int, string*, int*, int*, int*);
+void getScore(vector<string>, int, string*, int*, int*, int*, int*);
