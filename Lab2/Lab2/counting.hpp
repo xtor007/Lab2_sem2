@@ -14,4 +14,6 @@
 #endif /* counting_hpp */
 using namespace std;
 
-int* getScore(vector<string>, int, string*, int*, int*, int*);
+int stringLength(string);
+void getMatrix(vector<string>, int, string*, int*);
+string nameOfTeam(string, int);
