@@ -15,18 +15,20 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    int n = 0;
+    int n = 0;               // number of teams in sources
     cout<<"Write in a path to the directory with your files\n";
     vector<string> mtx;
-    string path;
+    string path;             // path to the directory with sources
     mtx = readFiles(path, &n);
-    string teams[n];
-    int cancels[n];
-    int difference[n];
-    int goals[n];
-    int array[n];
-    getScore(mtx, n, teams, goals, difference, cancels, array);
-    sort(array, difference, goals, teams, n);
-    outputInFile(path, teams, goals, difference, array, n);
+    
+    string teams[n];         //names of teams
+    int cancels[n];          //numbers of canceled balls for each team
+    int difference[n];       //numbers of difference between canceled balls and goals(for case when num of                          points from one team is equal to num of points from another team
+    int goals[n];            //numbers of goals for each team
+    int points[n];           //points for each team
+    
+    getScore(mtx, n, teams, goals, difference, cancels, points);    // a func for getting array of points
+    sort(points, difference, goals, teams, n);                      // a func for sorting all the arrays
+    outputInFile(path, teams, goals, difference, points, n);        // outputing sorted arrays in file
     return 0;
 }
