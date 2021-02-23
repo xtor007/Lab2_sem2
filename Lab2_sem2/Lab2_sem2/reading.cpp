@@ -8,11 +8,12 @@
 
 #include "reading.hpp"
 
-vector<string> readFiles(int *kolTeams) {
+vector<string> readFiles(string &path, int *kolTeams) {
     *kolTeams = 0;
     int nn = *kolTeams;
     string teka;
     getline(cin,teka);
+    path = teka;
     teka += "premier_league";
     vector<string> resultRead;
     int countFiles = 1;
@@ -35,5 +36,6 @@ vector<string> readFiles(int *kolTeams) {
         inFile.open(nowFile);
     }
 //    /Users/khramchenko/Documents/Lab2_sem2/files/premier_league2.csv
+    inFile.close();
     return resultRead;
 }
