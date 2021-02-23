@@ -15,10 +15,10 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    int n = 0;
+    int n = 0;               // number of teams in sources
     cout<<"Write in a path to the directory with your files\n";
     vector<string> mtx;
-    string path;
+    string path;             // path to the directory with sources
     mtx = readFiles(path, &n);
     string teams[n];
     int cancels[n];
