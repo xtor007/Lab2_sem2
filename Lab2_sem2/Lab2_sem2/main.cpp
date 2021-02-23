@@ -16,14 +16,16 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     int n = 0;
+    cout<<"Write in a path to the directory with your files\n";
     vector<string> mtx;
-    mtx = readFiles(&n);
+    string path;
+    mtx = readFiles(path, &n);
     string teams[n];
     int cancels[n];
     int difference[n];
     int goals[n];
     int array[n];
     getScore(mtx, n, teams, goals, difference, cancels, array);
-    outputInFile(teams, goals, cancels, array, n);
+    outputInFile(path, teams, goals, cancels, array, n);
     return 0;
 }

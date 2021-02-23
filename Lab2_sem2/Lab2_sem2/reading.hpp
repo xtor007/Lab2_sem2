@@ -15,6 +15,6 @@
 #include <vector>
 using namespace std;
 
-vector<string> readFiles(int *kolTeams);
+vector<string> readFiles(string &, int *kolTeams);
 
 #endif /* reading_hpp */

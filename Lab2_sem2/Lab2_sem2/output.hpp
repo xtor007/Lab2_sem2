@@ -10,5 +10,5 @@
 #include <vector>
 using namespace std;
 
-void outputInFile(string*, int*, int*, int*, int);
+void outputInFile(string, string*, int*, int*, int*, int);
 #endif /* output_hpp */
