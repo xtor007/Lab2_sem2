@@ -1,9 +1,16 @@
 //
 //  output.cpp
-//  Lab2
-//
-//  Created by Anatoliy Khramchenko on 2/22/21.
-//  Copyright © 2021 Anatoliy Khramchenko. All rights reserved.
-//
 
 #include "output.hpp"
+
+void outputInFile(string *teams, int *GoalsArray, int *CancelsArray, int *PointsArray){
+    ofstream fileOut;
+    fileOut.open("/Users/yaroslav/Desktop/Prepar/Lab2_sem2/files/result.csv");
+    if (fileOut.is_open()){
+        
+    }
+    else cout<<"Cannot open the file or it couldn't be created. Try to do it again!\n";
+
+}
+
+
