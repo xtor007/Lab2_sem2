@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     int goals[n];
     int array[n];
     getScore(mtx, n, teams, goals, difference, cancels, array);
-    outputInFile(path, teams, goals, cancels, array, n);
     sort(array, difference, goals, teams, n);
+    outputInFile(path, teams, goals, difference, array, n);
     return 0;
 }

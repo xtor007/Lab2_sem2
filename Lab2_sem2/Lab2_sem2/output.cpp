@@ -6,7 +6,7 @@
 void outputInFile(string path, string *teams, int *GoalsArray, int *CancelsArray, int *PointsArray, int size){
     ofstream fileOut;
     fileOut.open(path+"result.csv");
-    fileOut<<"#"<<","<<"TEAM"<<","<<setw(4)<<"G"<<","<<"PTS"<<endl;
+    fileOut<<"#"<<","<<"TEAM"<<","<<setw(2)<<"G"<<","<<"PTS"<<endl;
     if (fileOut.is_open()){
         for(int i = 0; i < size; i++){
             fileOut<<setw(3)<<i+1<<","<<teams[i]<<","<<setw(2)<<GoalsArray[i]<<":"<<CancelsArray[i]<<","<<PointsArray[i]<<endl;
