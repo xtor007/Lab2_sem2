@@ -29,8 +29,27 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
         currentValue = 0;
         while (currentValue < pivot) {
             if (points[currentValue]>points[pivot]) {
-                
+                replacementInt(points, currentValue, wall);
+                replacementInt(diffGoals, currentValue, wall);
+                replacementInt(pGoals, currentValue, wall);
+                replacementString(pNames, currentValue, wall);
+                wall++;
             }
+            if ((points[currentValue]==points[pivot]) && (diffGoals[currentValue]>diffGoals[pivot])) {
+                replacementInt(points, currentValue, wall);
+                replacementInt(diffGoals, currentValue, wall);
+                replacementInt(pGoals, currentValue, wall);
+                replacementString(pNames, currentValue, wall);
+                wall++;
+            }
+            if ((points[currentValue]==points[pivot]) && (diffGoals[currentValue]==diffGoals[pivot]) && (pGoals[currentValue]>pGoals[pivot])) {
+                replacementInt(points, currentValue, wall);
+                replacementInt(diffGoals, currentValue, wall);
+                replacementInt(pGoals, currentValue, wall);
+                replacementString(pNames, currentValue, wall);
+                wall++;
+            }
+            currentValue++;
         }
         pivot--;
     }
