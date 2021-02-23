@@ -13,5 +13,6 @@
 #include <iostream>
 using namespace std;
 
+void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOfTeams);
 
 #endif /* sorting_hpp */

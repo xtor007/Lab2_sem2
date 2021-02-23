@@ -24,10 +24,10 @@ void sort(int *points, int *diffGoals, int *pGoals, string *pNames, int numberOf
     int pivot = numberOfTeams - 1;
     int wall = 0;
     int currentValue = 0;
-    while (pivot >= 1) {
+    while (pivot >= 0) {
         wall = 0;
         currentValue = 0;
-        while (currentValue < pivot) {
+        while (currentValue < numberOfTeams) {
             if (points[currentValue]>points[pivot]) {
                 replacementInt(points, currentValue, wall);
                 replacementInt(diffGoals, currentValue, wall);

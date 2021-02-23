@@ -24,5 +24,6 @@ int main(int argc, const char * argv[]) {
     int goals[n];
     int array[n];
     getScore(mtx, n, teams, goals, difference, cancels, array);
+    sort(array, difference, goals, teams, n);
     return 0;
 }
