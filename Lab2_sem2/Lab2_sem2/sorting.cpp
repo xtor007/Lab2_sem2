@@ -23,21 +23,22 @@ void replacementString (string *arr, int a, int b) {
 void sort(int *points, int *diffGoals, int *pGoals, int *pCanc, string *pNames, int staticLeft, int staticRight) {
     if (staticRight > staticLeft) {
         int support = points[(staticLeft+staticRight)/2];
+        //int support = (staticLeft+staticRight)/2;
         int left = staticLeft;
         int right = staticRight;
         while (left < right) {
-            if (points[left]>=support) {
-                left++;
-            }
-            if (points[right]<=support) {
-                right--;
-            }
-            if ((points[left]<=support) && (points[right]>=support)) {
+            if (((points[left]<support) || (left == (staticLeft+staticRight)/2)) && ((points[right]>support) || (right == (staticLeft+staticRight)/2))) {
                 replacementInt(points, left, right);
                 replacementInt(diffGoals, left, right);
                 replacementInt(pGoals, left, right);
                 replacementInt(pCanc, left, right);
                 replacementString(pNames, left, right);
+            }
+            while (((points[left]>support) && (left<staticRight)) || (left==(staticLeft+staticRight)/2)) {
+                left++;
+            }
+            while (((points[right]<support) && (right>staticLeft)) || (right==(staticLeft+staticRight)/2)) {
+                right--;
             }
         }
         sort(points, diffGoals, pGoals, pCanc, pNames, staticLeft, right);
