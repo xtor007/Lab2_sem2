@@ -20,40 +20,27 @@ void replacementString (string *arr, int a, int b) {
     arr[b] = c;
 }
 
-void sort(int *points, int *diffGoals, int *pGoals, int *pCanc, string *pNames, int numberOfTeams) {
-    int pivot = numberOfTeams - 1;
-    int wall = 0;
-    int currentValue = 0;
-    while (pivot >= 0) {
-        wall = 0;
-        currentValue = 0;
-        while (currentValue < numberOfTeams) {
-            if (points[currentValue]>points[pivot]) {
-                replacementInt(points, currentValue, wall);
-                replacementInt(diffGoals, currentValue, wall);
-                replacementInt(pGoals, currentValue, wall);
-                replacementInt(pCanc, currentValue, wall);
-                replacementString(pNames, currentValue, wall);
-                wall++;
+void sort(int *points, int *diffGoals, int *pGoals, int *pCanc, string *pNames, int staticLeft, int staticRight) {
+    if (staticRight > staticLeft) {
+        int support = points[(staticLeft+staticRight)/2];
+        int left = staticLeft;
+        int right = staticRight;
+        while (left < right) {
+            if (points[left]>=support) {
+                left++;
             }
-            if ((points[currentValue]==points[pivot]) && (diffGoals[currentValue]>diffGoals[pivot])) {
-                replacementInt(points, currentValue, wall);
-                replacementInt(diffGoals, currentValue, wall);
-                replacementInt(pGoals, currentValue, wall);
-                replacementInt(pCanc, currentValue, wall);
-                replacementString(pNames, currentValue, wall);
-                wall++;
+            if (points[right]<=support) {
+                right--;
             }
-            if ((points[currentValue]==points[pivot]) && (diffGoals[currentValue]==diffGoals[pivot]) && (pGoals[currentValue]>pGoals[pivot])) {
-                replacementInt(points, currentValue, wall);
-                replacementInt(diffGoals, currentValue, wall);
-                replacementInt(pGoals, currentValue, wall);
-                replacementInt(pCanc, currentValue, wall);
-                replacementString(pNames, currentValue, wall);
-                wall++;
+            if ((points[left]<=support) && (points[right]>=support)) {
+                replacementInt(points, left, right);
+                replacementInt(diffGoals, left, right);
+                replacementInt(pGoals, left, right);
+                replacementInt(pCanc, left, right);
+                replacementString(pNames, left, right);
             }
-            currentValue++;
         }
-        pivot--;
+        sort(points, diffGoals, pGoals, pCanc, pNames, staticLeft, right);
+        sort(points, diffGoals, pGoals, pCanc, pNames, right+1, staticRight);
     }
 }
