@@ -48,6 +48,7 @@ void sort(int *points, int *diffGoals, int *pGoals, int *pCanc, string *pNames, 
                 replacementInt(pGoals, left, right);
                 replacementInt(pCanc, left, right);
                 replacementString(pNames, left, right);
+                left++; right--;
             }
             while ((isMore(points[left], pGoals[left], diffGoals[left], support, supportGoals, supportDiff)) && (left<staticRight)) {
                 left++;
