@@ -1,3 +1,5 @@
+*.DS_Store
+*.xcodeproj
 UserInterfaceState.xcuserstate
 
 *.xcuserstate
@@ -35,3 +37,5 @@ UserInterfaceState.xcuserstate
 *.exe
 *.out
 *.app
+
+*.xcuserstate
