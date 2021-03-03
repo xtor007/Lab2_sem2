@@ -6,9 +6,21 @@
 string nameOfTeam(string line, int length, int &index){
     string result = "";
     index = 0;
+    if(line[index]=='"'){
+        result += line[index];
+        index++;
+        while ( line[index] != '"') {
+            result = result + line[index];
+            index++;
+        }
+        result += line[index];
+        index++;
+    }
+    else{
     while ( line[index] != ',' ) {
         result = result + line[index];
         index++;
+    }
     }
     return result;
 }
